@@ -132,11 +132,7 @@ class InventoryApp:
         conn.close()
         self.load_items()
 ## حمود محمود 
-    def export_to_excel(self):
-        conn = sqlite3.connect(DB_NAME)
-        cursor = conn.execute("SELECT item_name, quantity FROM inventory WHERE user_id=?", (self.user_id,))
-        items = cursor.fetchall()
-        conn.close()
+    
 
         if not items:
             messagebox.showinfo("No Data", "No items to export.")
